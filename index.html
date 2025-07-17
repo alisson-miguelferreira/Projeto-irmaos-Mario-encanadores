@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Bros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="mascara-formulario" onclick="esconderform()"> </div>
+
+    <div class="header">
+        <img src="./logo-header.png" alt="logo Mario topo">
+        <a href="#home">Home</a>
+        <a href="nossos servicos.html">Nossos Serviços</a>
+        <a href="https://wa.me/5549991137577?text=Ol%C3%A1%20Alisson%2C%20eu%20vi%20seu%20site%20do%20Mario%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20como%20criar%20um%20site%20para%20meu%20neg%C3%B3cio%2C%20eu%20me%20chamo..."
+            id="link-whatsapp">Fale Conosco</a>
+    </div>
+
+
+    <div class="caixa-mae" id="home">
+        <div class="texto-principal">
+            <img src="./logo.png" alt="logo Mario Bros" class="logo-Mario">
+
+            <h1>🔧 Encanadores Mario & Luigi - Resolvendo Seus Problemas Hidráulicos Com Estilo! 🔧</h1>
+            <br>
+
+            <p>Você já se encontrou em uma situação de emergência com encanamento?
+                <br>
+                Vazamentos inesperados, canos entupidos ou torneiras que não param de pingar? Não se preocupe, porque
+                estamos aqui para salvar o dia!
+                Apresentamos a vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luigi!
+            </p>
+
+
+            <button onclick="mostrarform()">Entre em contato</button>
+        </div>
+
+        <div>
+            <img src="./mario.png" alt="logo Mario e Luigi" class="imagem-mario-luigi">
+        </div>
+    </div>
+
+    <div class="caixa-video" id="servicos">
+        <video src="./video.mp4" autoplay muted loop></video>
+        <div class="mascara"></div>
+    </div>
+
+    <a href="https://wa.me/5549991137577?text=Ol%C3%A1%20Alisson%2C%20eu%20vi%20seu%20site%20do%20Mario%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20como%20criar%20um%20site%20para%20meu%20neg%C3%B3cio%2C%20eu%20me%20chamo..."
+        class="link-whatsapp">
+        <img src="./whatsapp.png" alt=" link para o WhatsApp">
+    </a>
+
+
+    <form class="formulario-fale-conosco" id="contato" action="https://formcarry.com/s/swJ033pp-_T" method="POST"
+        enctype="multipart/form-data">
+        <input placeholder="Seu nome" type="text" name="nome">
+        <input placeholder="Seu Telefone" type="tel" name="telefone">
+        <textarea placeholder="Digite sua mensagem aqui" name="duvidas"></textarea>
+        <button type="submit">Pedir orçamento</button>
+    </form>
+
+</body>
+
+<script src="scripts super Mario.js">
+
+
+</script>
+
+</html>
