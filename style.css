@@ -1,95 +1,67 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-font-family: 'Mukta', sans-serif;
+    font-family: 'Mukta', sans-serif;
 }
 
-
-.logo-Mario{
-    height: 200px;}
-    .imagem-mario-luigi{
-        height: 500px;
-    }
-
-button{
-        color:white;
-        background-color: #C51111;
-        border-radius: 3px;
-        border: none;
-        width: 200px;
-        height: 50px;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-
-    
-    body{
-    height:100vh;
+body {
+    height: 100vh;
+    overflow-x: hidden; 
 }
 
-.texto-principal{
-   width: 40%;
-   color: aliceblue;
-   font-size:medium; 
-   line-height: 30px;
-}
-
-.caixa-video{
+/* --- Máscara Principal do Fundo  --- */
+.mascara {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
     position: fixed;
-    z-index: -1;
     top: 0;
+    left: 0; 
+    z-index: -1
+} 
+    
+
+/* --- Seção de Vídeo (agora com z-index mais baixo para ficar atrás da máscara) --- */
+.caixa-video {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -2; 
+    overflow: hidden; 
 }
 
-video{
+video {
     min-height: 100%;
     min-width: 100%;
-    position: fixed;
-    top: 0;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+   
 }
 
-.caixa-mae{
-    display:flex;
-    height:100vh;
-    align-items: center;
-    padding: 100px;
-    justify-content: space-around;
-}
-
-.mascara{
-height: 100%;
-width: 100%;
-background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
-position: fixed;
-top: 0;
-}
-
-.link-whatsapp img{
-    height: 60px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-}
-
-
+/* --- Header (Cabeçalho) --- */
 .header {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin: 30px;
-}
-
-
+    margin: 30px; 
+    position: relative; 
+    z-index: 2; 
+    width: calc(100% - 60px); 
+    box-sizing: border-box;
+} 
 
 .header img {
-    height: 60px;
+    height: 70px; 
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
-
-.header a{
-    color:white;
+.header a {
+    color: white;
     font-size: 24px;
     cursor: pointer;
     text-decoration: none;
@@ -101,7 +73,57 @@ top: 0;
     transition: 0.5s ease-in-out;
 }
 
+/* --- Conteúdo Principal (Caixa Mãe) --- */
+.caixa-mae {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding: 100px;
+    justify-content: space-around;
+    position: relative; 
+    z-index: 1; 
+    width: 100%; 
+    box-sizing: border-box;
+}
 
+.texto-principal {
+    width: 40%;
+    color: aliceblue;
+    font-size: medium;
+    line-height: 30px;
+}
+
+.logo-Mario {
+    height: 200px;
+}
+
+.imagem-mario-luigi {
+    height: 500px;
+}
+
+button {
+    color: white;
+    background-color: #C51111;
+    border-radius: 3px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* --- Botão WhatsApp Fixo --- */
+.link-whatsapp img {
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99; 
+}
+
+/* --- Formulário Fale Conosco --- */
 input {
     height: 40px;
     border-radius: 5px;
@@ -110,7 +132,7 @@ input {
     outline-color: #18D80F;
 }
 
-textarea{
+textarea {
     width: 250px;
     height: 100px;
     border-radius: 5px;
@@ -124,68 +146,118 @@ textarea{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50px;
-    left: 50px;
+    top: 30%; 
+    left: -300px; 
     padding: 20px;
     border-radius: 5px;
     gap: 20px;
-    top: 30%;
-    left: -300px;
     transition: left 1s ease-in-out;
+    z-index: 100; 
 }
 
 .mascara-formulario {
     visibility: hidden;
     position: fixed;
     top: 0;
+    left: 0; 
     width: 100vw;
     height: 100vh;
     transition: visibility 1s ease-in-out;
-    background:linear-gradient(109deg,rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    z-index: 90; 
 }
 
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+}
+/* --- Responsividade --- */
 
-
-@media ( height:1100px) {
-    p{ display: none;}
-
-.caixa-mae{
-    flex-direction: column;
-    padding: 10px;
-    justify-content: flex-start;
+@media (max-width: 768px) { 
     
+
+    .caixa-mae {
+        flex-direction: column;
+        padding: 10px;
+        justify-content: flex-start;
+        height: auto; 
     }
 
-    .texto-principal{
-
+    .texto-principal {
         display: flex;
         align-items: center;
         flex-direction: column;
-        }
+        width: 90%; 
+        text-align: center; 
+    }
 
-        .imagem-mario-luigi{
-            width: 80vw;
-            height: auto;
+    .imagem-mario-luigi {
+        width: 80vw;
+        height: auto;
+    }
 
-        }
+    .header {
+        margin: 30px;
+        flex-direction: flex-start;
+        gap: 20px;
+        align-items: center; 
+        justify-content: center;
+        width: auto; 
+    }
 
-        .header{
-            margin: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .header img {
+        height: 50px; 
+    }
+    .header {
+        display: flex; 
+        font-size: 20px;  
+        padding: 10px; 
+        gap: 15px; 
+    }
 
-        .header{
-            display: none;
-        
-        }
-
-        .header{
-            font-size: 20px;
-        }
-
+    .header a {
+        font-size: 18px;
+        width: 100%;
+        text-align: center; 
+    }
 }
 
+/* Adicionado uma media query para telas ainda menores. */
+@media (max-width: 480px) {
+    .header img {
+        height: 50px;
+    }
 
+    .header a {
+        font-size: 16px;
+    }
 
+    .caixa-mae {
+        padding: 10px;
+    }
+
+    .texto-principal {
+        font-size: small;
+        line-height: 25px;
+    }
+
+    .logo-Mario {
+        height: 150px;
+    }
+
+    .imagem-mario-luigi {
+        height: 400px;
+    }
+
+    button {
+        width: 150px;
+        height: 40px;
+        font-size: 0.8em;
+    }
+}
