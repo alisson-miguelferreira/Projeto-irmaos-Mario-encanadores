@@ -23,9 +23,11 @@ O objetivo é apresentar os serviços de forma clara e organizada, com design mo
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5** — Estrutura semântica e conteúdo do site  
-- **CSS3** — Estilização customizada e responsividade  
-- **Google Fonts** — Fonte Mukta para melhor legibilidade e design moderno
+- 💻 **HTML5** — marcação semântica e estrutura do site.  
+- 🎨 **CSS3** — estilização personalizada e responsiva.  
+- ⚙️ **JavaScript** — interações com botão do WhatsApp, formulários e animações simples.  
+- 🔤 **Google Fonts** — tipografia com a fonte Mukta.  
+
 
 ---
 
