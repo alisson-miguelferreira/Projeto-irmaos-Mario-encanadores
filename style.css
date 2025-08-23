@@ -1,3 +1,120 @@
+.texto-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-Mario {
+    display: block;
+    margin: 0 auto 32px auto;
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+}
+.texto-principal h1 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+.texto-principal p {
+    margin-bottom: 24px;
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+    line-height: 1.7;
+}
+/* --- Header (Cabeçalho) - ALINHADO À ESQUERDA --- */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
+}
+
+.header img {
+    height: 70px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.header a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.header a:hover {
+    color: #C51111;
+}
+
+#link-whatsapp {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#link-whatsapp:hover {
+    color: #C51111;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 15px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .header nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .header a {
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+    }
+    #link-whatsapp {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    .header a {
+        font-size: 16px;
+    }
+}
+/* Padronização da logo do header */
+.logo-header {
+    height: 70px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    margin-right: 10px;
+}
+
+.texto-principal p {
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.15em;
+    color: #eaeaea;
+    line-height: 1.7;
+}
 * {
     margin: 0;
     padding: 0;
@@ -48,29 +165,51 @@ video {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin: 30px; 
-    position: relative; 
-    z-index: 2; 
-    width: calc(100% - 60px); 
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 60px);
     box-sizing: border-box;
+    background: none;
+    font-family: 'Mukta', sans-serif;
 } 
 
 .header img {
-    height: 70px; 
+    height: 70px;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .header a {
     color: white;
-    font-size: 24px;
-    cursor: pointer;
+    font-size: 20px;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .header a:hover {
     color: #C51111;
-    font-size: 26px;
-    transition: 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+/* Estilo para nav dentro do header */
+.header nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+#link-whatsapp {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#link-whatsapp:hover {
+    color: #C51111;
+    transition: all 0.3s ease-in-out;
+}
 }
 
 /* --- Conteúdo Principal (Caixa Mãe) --- */
@@ -151,7 +290,7 @@ textarea {
     padding: 20px;
     border-radius: 5px;
     gap: 20px;
-    transition: left 1s ease-in-out;
+    transition: left 1.6s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 100; 
 }
 
@@ -203,28 +342,28 @@ footer {
     }
 
     .header {
-        margin: 30px;
-        flex-direction: flex-start;
-        gap: 20px;
-        align-items: center; 
-        justify-content: center;
-        width: auto; 
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 15px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
     }
-
-    .header img {
-        height: 50px; 
+    .header nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        width: 100%;
     }
-    .header {
-        display: flex; 
-        font-size: 20px;  
-        padding: 10px; 
-        gap: 15px; 
-    }
-
     .header a {
         font-size: 18px;
         width: 100%;
-        text-align: center; 
+        text-align: left;
+    }
+    #link-whatsapp {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -233,9 +372,11 @@ footer {
     .header img {
         height: 50px;
     }
-
     .header a {
         font-size: 16px;
+    }
+    .header {
+        padding: 10px;
     }
 
     .caixa-mae {
